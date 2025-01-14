@@ -1,3 +1,3 @@
 # Conversao-distancia
 
-Imagem docker usada no Desafio DevOps & Cloud 
+Projeto e Dockefile usados no Desafio DevOps & Cloud.
