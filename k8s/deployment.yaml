@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conversao-distancia
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: convert
+  template:
+    metadata:
+      labels:
+        app: convert
+    spec:
+      containers:
+      - name: conversao
+        image: rangelcr/conversao-distancia
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  name: conversao-distancia
+spec:
+  selector:
+    app: convert
+  type: ClusterIP
+  ports:
+    - port: 80   
+      targetPort: 5000
