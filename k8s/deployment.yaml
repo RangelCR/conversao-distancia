@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: conversao-distancia
 spec:
-  replicas: 7
+  replicas: 5
   selector:
     matchLabels:
       app: convert
@@ -16,8 +16,6 @@ spec:
       - name: conversao
         image: rangelcr/conversao-distancia
         env:
-        - name: teste
-          value: "123"
         ports:
         - name: http
           containerPort: 8080
