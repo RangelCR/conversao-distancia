@@ -16,6 +16,8 @@ spec:
       - name: conversao
         image: rangelcr/conversao-distancia
         env:
+          - name: teste
+            value: argo
         ports:
         - name: http
           containerPort: 8080
