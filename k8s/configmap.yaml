@@ -3,5 +3,7 @@ kind: ConfigMap
 metadata:
   name: app-config2
   namespace: default
+  annotations:
+    argocd.argoproj.io/sync-options: Replace=true  
 data:
   teste: aaa
